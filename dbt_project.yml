@@ -41,8 +41,8 @@ models:
     example:
       +materialized: table
     stage_zone:
-      +enabled: true
-      +materialized: table
+      enabled: true
+      materialized: table
       tags: ['LANDING']
 vars:
   dev_db: 'DEV_DV_PROTOTYPE_DB'
