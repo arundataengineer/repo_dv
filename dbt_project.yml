@@ -40,3 +40,11 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+    stage_zone:
+      +enabled: true
+      +materialized: table
+      tags: ['LANDING']
+vars:
+  dev_db: 'DEV_DV_PROTOTYPE_DB'
+  dev_land_schema: 'LANDING_ZONE'
+  rec_src: 'TPCH_SF1'
