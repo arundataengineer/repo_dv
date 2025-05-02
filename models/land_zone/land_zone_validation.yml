@@ -13,4 +13,14 @@ models:
         description: "Name of the customers"
         tests:
           - not_null
-          
+  - name: tbl_tpch_sf1_lineitem
+    description: "Table containing all lineitems for orders"
+    columns:
+      - name: L_ORDERKEY
+        description: "Primary key for line orders"
+        tests:
+          - not_null
+      - name: L_PARTKEY
+        description: "Primarykey for part orders"
+        tests:
+          - not_null
