@@ -13,3 +13,4 @@ models:
         description: "Name of the customers"
         tests:
           - not_null
+          
