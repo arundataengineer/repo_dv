@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: tbl_tpch_sf1_customer
+    description: "Table containing all customer details"
+    columns:
+      - name: C_CUSTKEY
+        description: "Primarykey for customers"
+        tests:
+          - unique
+          - not_null
+      - name: C_NAME
+        description: "Name of the customers"
+        tests:
+          - not_null
