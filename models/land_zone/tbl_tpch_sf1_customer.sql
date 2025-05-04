@@ -1,7 +1,6 @@
 {{
     config( 
             materialized = 'table',
-            database = var('dev_db'),
             schema = var('dev_land_schema'),
             alias = 'TPCH_SF1_CUSTOMER'
     )
