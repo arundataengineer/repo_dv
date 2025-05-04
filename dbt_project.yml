@@ -43,8 +43,9 @@ models:
       materialized: table
       tags: ['LANDING']
     Investment_Analysis:
-      enabled: true
-      materialized: view
+      bronze_zone:
+        enabled: true
+        materialized: view
     
 vars:
   dev_db: 'DEV_DV_PROTOTYPE_DB'
