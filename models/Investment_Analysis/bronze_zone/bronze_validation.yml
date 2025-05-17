@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: POSITION_ABC_BANK
+    columns:
+      - name: ACCOUNTID
+        description: Primarykey column
+        tests:
+          - not_null
+      - name: SYMBOL
+        description: The Symbol of security at ABC Bank
+        tests:
+          - not_null
+          - unique
+      - name: DESCRIPTION
+        description: >
+              The short name or code of the exchange where the security is traded
+        tests:
+          - not_null
+  - name: v_idfc_src_extract_idfc
+    description: Investment Data
+    columns:
+      - name: FIL_NM_HK
+        description: HASHKEY for File name 
+        tests:
+          - not_null
+          - unique
