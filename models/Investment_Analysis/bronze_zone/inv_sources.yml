@@ -6,4 +6,5 @@ sources:
     schema: SOURCE_DATA
     tables:
       - name: ABC_BANK_POSITION
+      - name: TBL_IDFC_SRC
       

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: test
+    database: training_db
+    schema: Public
+    tables:
+      - name: Department
+      - name: employee_details
+      - name: BILLING
+      

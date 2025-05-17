@@ -46,16 +46,35 @@ models:
       bronze_zone:
         enabled: true
         materialized: view
+      staging:
+        +materialized: view
+      refined:
+        +materialized: view
+      marts:
+        portfolio:
+          +materialized: table
+      
+      
+    dbtvault_snowflake_demo:
+      raw_stage:
+        +materialized: table
+        +tags: raw
+    training:
+      Landing_Zone:
+        +materialized: view
+        +database: training_db
+        +schema: stage_layer
+        +tags: "stage_zone"
+      EDW_Zone:
+        +materialized: table
+        +database: training_db
+        +schema: edw_layer
+        +tags: "edw_zone"
     
 vars:
   dev_db: 'DEV_DV_PROTOTYPE_DB'
   dev_land_schema: 'LANDING_ZONE'
   rec_src: 'TPCH_SF1'
-  dev:
-   dbt_current_env: DEV_DV_PROTOTYPE_DB
-  qa:
-   dbt_current_env: QA_DV_PROTOTYPE_DB
-  prod:
-   dbt_current_env: PROD_DV_PROTOTYPE_DB
   inv_db: PORTFOLIO_TRACKING
   inv_sch: SOURCE_DATA
+  
