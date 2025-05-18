@@ -7,4 +7,5 @@ sources:
     tables:
       - name: ABC_BANK_POSITION
       - name: TBL_IDFC_SRC
+      - name: client_mapping
       
