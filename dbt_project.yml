@@ -77,4 +77,5 @@ vars:
   rec_src: 'TPCH_SF1'
   inv_db: PORTFOLIO_TRACKING
   inv_sch: SOURCE_DATA
+  cur_sch: CURATED
   

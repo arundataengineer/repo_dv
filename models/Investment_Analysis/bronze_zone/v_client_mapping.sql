@@ -1,37 +1,30 @@
 {{
     config(
+            materialized = 'view',
             database = var('inv_db'),
             schema = var('inv_sch')
     )
 }}
 
-{%-set yaml_metadata -%}
+{%- set yaml_metadata -%}
 
 source_model:
-    inv: "TBL_IDFC_SRC"
+    inv: "client_mapping"
+
 derived_columns:
-    CL_NM : "CLIENTNAME::TEXT"
-    CL_ID : "CLIENTID::TEXT"
-    CO_NM : "COMPANYNAME::TEXT"
-    FIL_NM : "FILE_NAME::TEXT"
-    FIL_RW_NUM : "FILE_ROW_NUMBER::TEXT"
+    PH_NUM: "PHONENUMBER::TEXT"
+    E_MAIL: "EMAIL::TEXT"
+    M_STATUS: "MARTIALSTATUS::TEXT"
+    CL_NM : "CLIENTID::TEXT"
     SOURCE: "RECORD_SOURCE::TEXT"
     LOAD_DATETIME: "LOAD_DATE::TEXT"
-    EFFECTIVE_FROM: "TRANSACTIONDATE::TEXT"
-    START_DATE: "TRANSACTIONDATE::TEXT"
+    EFFECTIVE_FROM: "LOAD_DATE::TEXT"
+    START_DATE: "LOAD_DATE::TEXT"
     END_DATE: "TO_DATE('9999-12-31')"
-    
 hashed_columns:
     CL_NM_HK:
         - "CL_NM"
-    CL_ID_HK:
-        - "CL_ID"
-    FIL_NM_HK:
-        - "FIL_NM"
-        - "FIL_RW_NUM"
-
-
-{%- endset -%}
+{% endset %}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
 
