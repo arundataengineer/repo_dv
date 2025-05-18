@@ -3,7 +3,6 @@
             materialized = 'incremental',
             database = var('inv_db'),
             schema = var('cur_sch'),
-            pre_hook = 'DELETE FROM PORTFOLIO_TRACKING.CURATED.H_IDFC'
 
     )
 }}
